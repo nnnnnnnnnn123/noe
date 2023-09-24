@@ -9,7 +9,6 @@ df_healthcare = pd.read_csv("healthcare-dataset-stroke-data 2.csv")
 st.header("Contour Plot of Age vs. Average Glucose Level")
 fig_contour = px.density_contour(df_healthcare, x='age', y='avg_glucose_level', color='stroke',
                                  title='Contour Plot of Age vs. Average Glucose Level',
-                                 labels={'age': 'Age', 'avg_glucose_level': 'Average Glucose Level'},
                                  color_discrete_map={0: 'blue', 1: 'red'})
 fig_contour.update_layout(xaxis_title='Age', yaxis_title='Average Glucose Level')
 st.plotly_chart(fig_contour)
@@ -32,8 +31,7 @@ data_smoking_gender = {
 df_smoking_gender = pd.DataFrame(data_smoking_gender)
 fig_sunburst = px.sunburst(df_smoking_gender, path=['smoking_status', 'gender'], values='stroke',
                            title='Sunburst Chart: Relationship between Smoking Status, Gender, and Stroke',
-                           color_continuous_scale='Viridis',
-                           labels={'smoking_status': 'Smoking Status', 'gender': 'Gender', 'stroke': 'Stroke'})
+                           color_continuous_scale='Viridis')
 st.plotly_chart(fig_sunburst)
 
 # Plot Animated Bar Chart
