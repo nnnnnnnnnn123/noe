@@ -9,7 +9,6 @@ Original file is located at
 
 import subprocess
 
-# Install the required packages
 subprocess.run(["pip", "install", "plotly"])
 subprocess.run(["pip", "install", "streamlit"])
 subprocess.run(["pip", "install", "pandas"])
