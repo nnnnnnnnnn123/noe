@@ -7,16 +7,16 @@ Original file is located at
     https://colab.research.google.com/drive/1EEvSJtR8HZSZ9zHUqltd24Sz_yIqYpqJ
 """
 
-import subprocess
-
-subprocess.run(["pip", "install", "plotly"])
-subprocess.run(["pip", "install", "streamlit"])
-subprocess.run(["pip", "install", "pandas"])
-
-
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+
+# Install the required packages
+st.write("Installing necessary packages...")
+st.write("This may take a minute.")
+st.run_on_every_run("pip install plotly")
+st.run_on_every_run("pip install streamlit")
+st.run_on_every_run("pip install pandas")
 
 # Load the healthcare data
 df_healthcare = pd.read_csv("healthcare-dataset-stroke-data 2.csv")
