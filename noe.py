@@ -7,6 +7,14 @@ Original file is located at
     https://colab.research.google.com/drive/1EEvSJtR8HZSZ9zHUqltd24Sz_yIqYpqJ
 """
 
+import subprocess
+
+# Install the required packages
+subprocess.run(["pip", "install", "plotly"])
+subprocess.run(["pip", "install", "streamlit"])
+subprocess.run(["pip", "install", "pandas"])
+
+
 import streamlit as st
 import pandas as pd
 import plotly.express as px
