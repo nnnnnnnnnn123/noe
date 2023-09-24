@@ -5,15 +5,6 @@ import plotly.express as px
 # Load the healthcare data
 df_healthcare = pd.read_csv("healthcare-dataset-stroke-data 2.csv")
 
-# Plot 3D Scatter Plot
-st.header("3D Scatter Plot of Age, Glucose Level, and BMI")
-fig_3d_scatter = px.scatter_3d(df_healthcare, x='age', y='avg_glucose_level', z='bmi', color='stroke',
-                               title='3D Scatter Plot of Age, Glucose Level, and BMI',
-                               labels={'age': 'Age', 'avg_glucose_level': 'Average Glucose Level', 'bmi': 'BMI'},
-                               color_discrete_map={0: 'blue', 1: 'red'})
-fig_3d_scatter.update_layout(scene=dict(xaxis_title='Age', yaxis_title='Average Glucose Level', zaxis_title='BMI'))
-st.plotly_chart(fig_3d_scatter)
-
 # Plot Contour Plot
 st.header("Contour Plot of Age vs. Average Glucose Level")
 fig_contour = px.density_contour(df_healthcare, x='age', y='avg_glucose_level', color='stroke',
